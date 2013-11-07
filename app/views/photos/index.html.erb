@@ -1,0 +1,9 @@
+<h1>Photogur</h1>
+<%= link_to button_tag("New photo!"), "photos/new" %>
+
+<% @photos.each do |p| %>
+	<h3><%= p.title %></h3>
+	<p><%= p.artist %></p> <br>
+	<%= link_to image_tag(p.url), photo_path(p) %> <br>
+<% end %>
+

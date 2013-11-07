@@ -1,0 +1,26 @@
+<% if @photo.errors.any? %>
+	<div class="error_messages">
+		<h4>Please finish filling out the form.</h4>
+
+		<ul>
+			<% for message in @photo.errors.full_messages %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for @photo do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br>
+	<%= f.label :artist %>
+	<%= f.text_field :artist %>
+	<br>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	<br>
+	<%= f.submit %>
+	<%= link_to "Cancel", photos_path %>
+
+<% end %>
