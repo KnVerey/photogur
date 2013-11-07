@@ -1,9 +1,12 @@
-<h1>Photogur</h1>
-<%= link_to button_tag("New photo!"), "photos/new" %>
+<div class="jumbotron">
+  <h1>Get involved!</h1>
+  <p>Don't just sit there, share your favourite picture now!</p>
+  <p><a href="photos/new" class="btn btn-success btn-lg" role="button">Add photo &raquo;</a></p>
+</div>
 
 <% @photos.each do |p| %>
-	<h3><%= p.title %></h3>
-	<p><%= p.artist %></p> <br>
-	<%= link_to image_tag(p.url), photo_path(p) %> <br>
+	<div class="thumbs-container">
+		<%= link_to image_tag(p.url, class: "img-thumbnail"), photo_path(p) %> <br>
+	</div>
 <% end %>
 
