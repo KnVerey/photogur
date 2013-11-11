@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107032037) do
+ActiveRecord::Schema.define(version: 20131108203555) do
+
+  create_table "collections", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "photos", force: true do |t|
     t.string   "artist"
@@ -19,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131107032037) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "collection_id"
   end
 
 end

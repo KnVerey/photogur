@@ -20,6 +20,9 @@
 		<br>
 		<%= f.label :url %>
 		<%= f.text_field :url %>
+		<br>
+		<%= f.label :collection_id %>
+		<%= f.select :collection_id, options_from_collection_for_select(@collections, 'id', 'name') %>
 		<br><br>
 		<%= f.submit %>
 		<br><br>

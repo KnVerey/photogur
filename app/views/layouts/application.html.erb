@@ -27,17 +27,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Photogur</a>
+          <%= link_to "Photogur", root_path, class: "navbar-brand" %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><%= link_to "Home", root_path %></li>
              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Collections <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Eventually</a></li>
-                <li><a href="#">This may display</a></li>
-                <li><a href="#">Some collections</a></li>
+                <li><%= link_to "Add a new collection", new_collection_url %></li>
+                <% @collections = Collection.all %>
+                <%  if !@collections.nil? %>
+                <li class="dropdown-header">Existing collections</li>
+                  <% @collections.sort.each do |collection| %>
+                     <li><%= link_to collection.name, collection_path(collection) %></li>
+                   <% end %>
+                <% end %>
               </ul>
             </li>
           </ul>

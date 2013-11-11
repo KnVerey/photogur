@@ -13,6 +13,12 @@
  */
 
 
+.jumbotron.show a {
+	line-height: 1.25em;
+	font-size: 15px;
+	float: right;
+}
+
 .thumbs-container {
 	display: inline-block;
 	text-align: center;
@@ -32,9 +38,6 @@ img {
 .form-container {
 	width:40%;
 	display: inline-block;
-}
-
-form {
 	padding-left: 3em;
 }
 

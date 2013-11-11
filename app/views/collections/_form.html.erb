@@ -1,0 +1,23 @@
+<% if @collection.errors.any? %>
+	<div class="error-messages">
+		<h4>Please finish filling out the form.</h4>
+
+		<ul>
+			<% for message in @collection.errors.full_messages %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<div class="form-container">
+	<%= form_for @collection do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<br><br>
+		<%= f.submit %>
+		<br><br>
+		<%= link_to "Cancel", photos_path %>
+
+	<% end %>
+</div>

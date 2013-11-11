@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
 
 	def new
 		@photo = Photo.new	
+		@collections = Collection.all
 	end
 
 	def create
@@ -24,6 +25,8 @@ class PhotosController < ApplicationController
 
 	def edit
 		@photo = Photo.find(params[:id])
+		@collections = Collection.all
+
 	end
 
 	def update
@@ -47,6 +50,6 @@ class PhotosController < ApplicationController
 	private
 
 	def photo_params
-		params.require(:photo).permit(:artist, :title, :url)
+		params.require(:photo).permit(:artist, :title, :url, :collection_id)
 	end
 end
